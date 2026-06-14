@@ -1,0 +1,25 @@
+# CI de Nível 01 - Disparo Manual através de clique
+
+name: 'N1 - Execução Manual'
+
+on:
+  workflow_dispatch:
+
+jobs:
+  testes-unitarios:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clonar o projeto
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24.x
+
+      - name: Instalar dependências
+        run: npm ci
+
+      - name: Executar testes com Mocha
+        run: npm test
