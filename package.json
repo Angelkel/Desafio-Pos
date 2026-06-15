@@ -5,12 +5,14 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "test:report": "mocha --reporter mochawesome --reporter-options reportDir=reports,reportFilename=relatorio-testes,html=true,json=true"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "mocha": "^11.7.5"
+  "devDependencies": {
+    "mocha": "^11.7.5",
+    "mochawesome": "^7.1.3"
   }
 }
